@@ -15,14 +15,16 @@ class ScrabbleWord
 
   def score
     @word.each_char do |letter|
-    @score += SCOREBOX[letter.to_sym]
+      @score += SCOREBOX[letter.to_sym]
+    end
+  return @score
+  end
+  def multiplier_score (multiplier)
+    @word.each_char do |letter|
+      @score += SCOREBOX[letter.to_sym]
+    end
+    @multiplier_score = @score * multiplier.to_i
+    return @multiplier_score
   end
 
-  def multiplier_score (multiplier)
-    #@word.each_char do |letter|
-    #@score += SCOREBOX[letter.to_sym]
-    @score = @score * multiplier.to_i
-  end
-  return @score
-end
 end
