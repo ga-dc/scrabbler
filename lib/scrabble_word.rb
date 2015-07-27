@@ -16,7 +16,7 @@ class ScrabbleWord
     score = 0
     letters = @word.split("")
     letters.each do |letter|
-      score = score + @@values[letter.to_sym]
+      score = score + @@values[letter.downcase.to_sym]
     end
     return score
   end
