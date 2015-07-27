@@ -12,7 +12,7 @@ class ScrabbleWord
     return @score
   end
 
-  def multiplier_score(mult)
-    return mult * score
+  def multiplier_score(n)
+    return n * score
   end
 end
