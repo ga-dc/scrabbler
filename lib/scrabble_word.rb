@@ -13,6 +13,11 @@ class ScrabbleWord
   end
 
   def score
-    @@values[@word.to_sym]
+    score = 0
+    letters = @word.split("")
+    letters.each do |letter|
+      score = score + @@values[letter.to_sym]
+    end
+    return score
   end
 end
