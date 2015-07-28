@@ -1,13 +1,12 @@
 class ScrabbleWord
-  attr_accessor :word, :score
+  attr_accessor :word
 
   def initialize(word)
     @word = word
-    @score = 0
   end
 
   def score
-
+    score = 0
     values = {a: 1, b: 3, c: 3, d: 2, e: 1,
               f: 4, g: 2, h: 4, i: 1, j: 8,
               k: 5, l: 1, m: 3, n: 1, o: 1,
@@ -16,13 +15,13 @@ class ScrabbleWord
               z: 10}
 
       @word.split("").each do |value|
-      @score += values[value.downcase.to_sym]
+      score += values[value.downcase.to_sym]
   end
 
-    return @score
+    return score
   end
 
   def multiplier_score(multiplier)
-    return multiplier * @score
+    return multiplier * score
   end
 end
