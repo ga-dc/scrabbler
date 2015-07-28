@@ -15,12 +15,8 @@ class ScrabbleWord
   end
 
   def score
-    @score = 0
-    @word.split("").each do |letter|
-      @score += @@letter_scores[letter.to_sym]
-    end
-
-    @score
+    # @score = @word.split('').map { |letter| @@letter_scores[letter.to_sym] }.inject { |sum, value| sum + value }
+    @score = @word.split('').map { |letter| @@letter_scores[letter.to_sym] }.inject(:+)
   end
 
 end
