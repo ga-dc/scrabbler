@@ -19,4 +19,8 @@ class ScrabbleWord
     score
   end
 
+  def multiplier_score(multiply_val)
+    multiply_val * score
+  end
+
 end
