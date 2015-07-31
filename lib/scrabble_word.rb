@@ -14,10 +14,10 @@ class ScrabbleWord
     @wordArray = @word.downcase.split('')
   end
 
-  #iterate thru array, get values, and sum numbers
+  #iterate thru array, compare, get values, and sum numbers
   def score
     #no clue
-    
+
 
     end
   end
