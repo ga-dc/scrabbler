@@ -4,7 +4,7 @@ class ScrabbleWord
 
   def initialize(word)
     # puts word
-    @word = word
+    @word = word.downcase
     self.score(@word)
   end
 
@@ -30,7 +30,7 @@ class ScrabbleWord
 
 end
 
-small_word = ScrabbleWord.new("a")
-small_word = ScrabbleWord.new("bottle")
+# small_word = ScrabbleWord.new("a")
+small_word = ScrabbleWord.new("mittens")
 big_word = small_word.multiplier_score(3)
 puts big_word
