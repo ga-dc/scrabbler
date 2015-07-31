@@ -12,9 +12,19 @@ class ScrabbleWord
   z: 10
   }
 
-# initialize word as a variable
-# take the word in play
-# make it downcase
-# store it in the instance variable
+  def score
+    score =
+  end
+end
+
+# # initialize word as a variable
+# # take the word in play
+# # make it downcase
+# # store it in the instance variable
+# # store letter values in a hash
+# # def score
 # parse the word for its letters
-# obtain letter values
+# obtain values from hash for each letter in word
+# add them together for the word score
+# identify words meriting multiplication of their score values
+# muliply those word scores by 2 or 3 depending
