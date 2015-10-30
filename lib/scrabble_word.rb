@@ -5,38 +5,21 @@ class ScrabbleWord
     @word_score=[]
     @sum = 0
   end
-
   def word
-    @word.downcase
+    @word = word
   end
-
   def score
-    @sum = 0
-    @word_score << @word
-      i=0
       @word_score = @word.split("")
-      while i < @word_score.length do
-        @sum = @sum + @points[@word_score[i].downcase]
-        i+=1
+      @word_score.each do |word|
+        @sum = @sum + @points[word.downcase]
       end
     @sum
   end
-
   def multiplier_score(multiplier)
-    @sum = 0
-    @word_score << @word
-    if @word.length == 1
-      @sum = @points[@word_score[0]] * multiplier
-    else
-      i=0
       @word_score = @word.split("")
-      while i < @word_score.length do
-        @sum = @sum + (@points[@word_score[i].downcase] * multiplier)
-        i+=1
+      @word_score.each do |word|
+        @sum = @sum + @points[word.downcase] * multiplier
       end
-    end
     @sum
   end
-
-
 end
