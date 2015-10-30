@@ -29,5 +29,9 @@ describe ScrabbleWord do
       word = ScrabbleWord.new("mittens")
       expect( word.multiplier_score(3) ).to eq 27
     end
+    it "multiplies score by a factor of 5" do
+      word = ScrabbleWord.new("mittens")
+      expect( word.multiplier_score(5) ).to eq 45
+    end
   end
 end
