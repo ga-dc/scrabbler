@@ -19,9 +19,8 @@ def initialize(word)
 end
 
 def multiplier_score multiplier
-  @multiplier = multiplier
-  @multiplied = @score * multiplier.to_i
-  returns @multiplied
+  x = multiplier.to_i
+  @multiplied = @score * x
 end
 
 end
