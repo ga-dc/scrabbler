@@ -24,14 +24,16 @@ class ScrabbleWord
           score = score + @letter_values[x]
           puts score
       end
+  end
 
+  def score_multiplier score_multiplier
+    score = score * score_multiplier
   end
 
 
 end
 
 jungle = ScrabbleWord.new "Jungle"
-jungle.print_word
 jungle.convert_to_lower
 jungle.word_score
 
