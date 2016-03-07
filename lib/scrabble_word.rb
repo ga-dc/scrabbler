@@ -1,11 +1,11 @@
-require "pry"
-
 class ScrabbleWord
 
   @@scoreVals = [1,3,3,2,1,4,2,4,1,8,5,1,3,1,1,3,10,1,1,1,1,4,4,8,4,10]
+  attr_accessor :word, :score
 
   def initialize(word)
     @word = word
+    @score = self.get_score
   end
 
   def get_word
@@ -24,15 +24,3 @@ class ScrabbleWord
   end
 
 end
-
-test = [ ScrabbleWord.new("TeSt"),
-         ScrabbleWord.new("test"),
-         ScrabbleWord.new("Zebra"),
-         ScrabbleWord.new("zebrA"),
-         ScrabbleWord.new("Z"),
-         ScrabbleWord.new("z"),
-         ScrabbleWord.new("zqxj"),
-         ScrabbleWord.new("ZQXJ")]
-
-
-binding.pry
