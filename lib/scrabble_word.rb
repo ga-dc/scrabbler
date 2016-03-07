@@ -16,6 +16,7 @@ class  ScrabbleWord
 
 
 # this makes the word go into an array called chosenWord
+# this is where i had difficulty
   def chosenWord
     scoreEngine = {
       "a"=>1, "b"=>3, "c"=>3, "d"=>2, "e"=>1,
