@@ -2,7 +2,7 @@ require "pry"
 
 class ScrabbleWord
   attr_accessor(:word, :points, :assess, :storeWord, :pointsArr)
-  def initialize(word)
+  def initialize(word, multiplier)
     @word = word
     @lookup = {"a"=>1, "b"=>3, "c"=>3, "d"=>2, "e"=>1,
       "f"=>4, "g"=>2, "h"=>4, "i"=>1, "j"=>8,
@@ -12,6 +12,7 @@ class ScrabbleWord
       "z"=>10 }
     @points = 0
     @storeWord = []
+    @multiplier = multiplier
   end
 
   def getWord
@@ -19,16 +20,15 @@ class ScrabbleWord
   end
 
   def score
-    @storeWord = getWord.split("")
-    @storeWord.each do |letter|
+    getWord.split("").each do |letter|
     @points += @lookup[letter]
     end
-    @points
+    @points * @multiplier
   end
 
 end
 
-bip = ScrabbleWord.new("Quirky")
+cat = ScrabbleWord.new("Quirky", 3)
 
 
 binding.pry
