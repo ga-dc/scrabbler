@@ -52,7 +52,7 @@ class ScrabbleWord
     word.each_char do |letter|
       #find the corresponding letter in the data table / .each_pair or .fetch
       #add the vales to a running score total
-      @total += @@letter_values.fetch(letter)
+      @total += @@letter_values[letter]
     end
     return @total
   end
