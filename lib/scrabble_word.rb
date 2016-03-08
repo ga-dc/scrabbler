@@ -1,4 +1,4 @@
-require "pry"
+# require "pry"
 #create a class called ScrabbleWord
 class ScrabbleWord
 #intiliaze method with argument 'word' and make it instance var
@@ -8,6 +8,7 @@ class ScrabbleWord
 #method score to find point values of each letter
   def score
     score = 0
+    #create array of all letters and matching value
     scores = { a: 1, b: 3, c: 3, d: 2, e: 1,
     f: 4, g: 2, h: 4, i: 1, j: 8,
     k: 5, l: 1, m: 3, n: 1, o: 1,
@@ -17,7 +18,7 @@ class ScrabbleWord
     }
     #split word into an array and find value of each letter
     @word.downcase.split(",").each do |letters|
-      return score += scores.letter.to_sym
+      return score += scores.letters.to_sym
   end
   #for double or triple pt value of letters, multiply the score
   def multiplier_score(multiplier)
@@ -26,4 +27,4 @@ class ScrabbleWord
 
 end
 
-binding.pry
+# binding.pry
