@@ -17,21 +17,20 @@ class ScrabbleWord
       u: 1, v: 4, w: 4, x: 8, y: 4,
       z: 10
     }
-    split_word = @word.split("")
-
-    total_word = split_word.map do |letter|
+    
+    total_word = @word.split("").map do |letter|
       letter_values[letter.to_sym]
     end
     score = total_word.inject(:+)
-    puts score
   end
 
 def multiplier_score multiplier
-  this.score * multiplier
+  score * multiplier
 end
 end
 
 hello = ScrabbleWord.new("hello")
 hello.score
+# puts hello.multiplier_score(2)
 
 binding.pry
