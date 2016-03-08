@@ -6,10 +6,6 @@ class ScrabbleWord
     @word = word
   end
 
-  def lowercase
-    return @word.downcase
-  end
-
   def score
     @score = score
     scores = { a: 1, b: 3, c: 3, d: 2, e: 1,
@@ -19,6 +15,8 @@ class ScrabbleWord
     u: 1, v: 4, w: 4, x: 8, y: 4,
     z: 10
     }
+    @word.downcase.split(",")
+    
   end
 
   def multiplier_score(multiplier)
