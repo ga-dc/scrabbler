@@ -17,8 +17,7 @@ class ScrabbleWord
     }
     #split word into an array and find value of each letter
     @word.downcase.split(",").each do |letters|
-
-
+      return score += scores.letter.to_sym
   end
   #for double or triple pt value of letters, multiply the score
   def multiplier_score(multiplier)
