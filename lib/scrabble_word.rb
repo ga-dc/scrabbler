@@ -48,9 +48,8 @@ class ScrabbleWord
 
   def score
     #split the word into its letters
-    letters_in_word = word.split("")
     #for each letter in the word array / .each
-    letters_in_word.each do |letter|
+    word.each_char do |letter|
       #find the corresponding letter in the data table / .each_pair or .fetch
       #add the vales to a running score total
       @total += @@letter_values.fetch(letter)
