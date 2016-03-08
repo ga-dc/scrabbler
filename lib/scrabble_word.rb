@@ -5,6 +5,7 @@ class ScrabbleWord
   attr_accessor :letter_values
 
   def initialize word
+    @score = 0
     @word = word
     @letter_values = {
       a: 1, b: 3, c: 3, d: 2, e: 1,
@@ -22,7 +23,12 @@ class ScrabbleWord
   end
 
   def score
-    #for each letter in word
+    #enumerate thru word and check if its chars match keys from letter_values
+    #add up the values of the matching keys to get score
+      #convert word to an array to loop thr
+      #for each letter in word_check,
+      #loop thru letter_values and find a key that matches
+      #add matching keys' value to a score instance variable
   end
 
   def multiplier_score
