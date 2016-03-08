@@ -14,7 +14,7 @@ class ScrabbleWord
 
   def get_score
     temp = 0
-    # c-97 equals the numerical value of a character from 0..25
+    # c-97 equals the numerical value of a lowercase character from 0..25
     self.get_word.each_byte {|c| temp += @@scoreVals[c-97]}
     return temp
   end
