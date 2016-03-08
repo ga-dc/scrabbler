@@ -1,13 +1,8 @@
-require "pry"
-
-
-
-
-
+# require "pry"
 
 
 class ScrabbleWord
-  attr_accessor :word
+  attr_accessor :word, :word_score
   @@letter_scores = {
     a: 1, b: 3, c: 3, d: 2, e: 1,
     f: 4, g: 2, h: 4, i: 1, j: 8,
@@ -22,18 +17,20 @@ class ScrabbleWord
   end
 
   def score
-    word_score = 0
-    split_word = word.split("")
-    puts split_word
-    split_word.each do |x|
-      word_score = word_score + @@letter_scores[x.to_sym]
+    @word_score = 0
+    word.split("").each do |x|
+      @word_score = @word_score + @@letter_scores[x.to_sym]
     end
-    puts word_score
+     @word_score
+  end
+
+  def multplier_score (multplier)
+    @word_score = @word_score * multiplier
   end
 end
 
-  my_word = ScrabbleWord.new("superduper")
-  my_word.score
+# my_word = ScrabbleWord.new("superduper")
+# my_word.score
 
 
-  binding.pry
+# binding.pry
