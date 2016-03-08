@@ -26,9 +26,18 @@ class ScrabbleWord
     #enumerate thru word and check if its chars match keys from letter_values
     #add up the values of the matching keys to get score
       #convert word to an array to loop thr
-      #for each letter in word_check,
+    word_arr = @word.split('')
+      #for each letter in word_arr,
+      for letter in word_arr
       #loop thru letter_values and find a key that matches
-      #add matching keys' value to a score instance variable
+        @letter_values.each do |key, value|
+        #add matching keys' value to a score instance variable
+          if "#{key}" === letter
+            @score += value
+          end
+        end
+      end
+    return @score
   end
 
   def multiplier_score
