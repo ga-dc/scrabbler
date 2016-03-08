@@ -21,6 +21,10 @@ class ScrabbleWord
     }
   end
 
+  def multiplier_score(multiplier)
+    return multiplier * score
+  end
+
 end
 
 
