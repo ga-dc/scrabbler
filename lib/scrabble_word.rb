@@ -1,33 +1,39 @@
-require "pry"
+# require "pry"
 
 class ScrabbleWord
 
-  @scrabble_scores = [
-    [1, "a", "e", "i", "l", "n", "o", "r", "s", "t", "u"],
-    [2, "d", "g"],
-    [3, "b", "c", "m", "p"],
-    [4, "f", "h", "v", "w", "y"],
-    [5, "k"],
-    [8, "j", "x"],
-    [10, "q", "z"]
-  ]
+  attr_accessor = :word, :array_word, :scrabble_scores, :letter_value, :score
 
   def initialize(word)
     @word = word
+    @score = 0
+    @array_word = []
+    @scrabble_scores = {
+      a: 1, b: 3, c: 3, d: 2, e: 1,
+      f: 4, g: 2, h: 4, i: 1, j: 8,
+      k: 5, l: 1, m: 3, n: 1, o: 1,
+      p: 3, q: 10, r: 1, s: 1, t: 1,
+      u: 1, v: 4, w: 4, x: 8, y: 4,
+      z: 10
+    }
   end
 
-  def word
-    @word.downcase
-  end
+  def score
+    @array_word = @word.downcase.split("")
 
-  def word_score
-    for word in @scrabble_scores
-      
+    @array_word.each do |letter|
+      @score += @scrabble_scores[letter.to_sym]
     end
+
+    @score
   end
 
+  def multiplier_score(multiplier)
+    @score = @score * multiplier
+  end
 end
 
 caitlin = ScrabbleWord.new("caitlin")
+caitlin.score
 
-binding.pry
+# binding.pry
