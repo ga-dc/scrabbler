@@ -20,6 +20,7 @@ class ScrabbleWord
   end
 
   def score
+    @points = 0
     getWord.split("").each do |letter|
     @points += @lookup[letter]
     end
@@ -30,11 +31,4 @@ end
 
 cat = ScrabbleWord.new("Quirky", 3)
 
-
 binding.pry
-
-
-# need a place to store the points per letter
-# split apart the scrabble word
-# assess each letter against the points per letter hash
-#  after each letter is assessed, store the cumulative value of the word somewhere
