@@ -1,8 +1,6 @@
-require 'pry'
+
 
 class ScrabbleWord
-
-  attr_accessor :letter_values
 
   def initialize word
     @score = 0
@@ -19,20 +17,20 @@ class ScrabbleWord
 
   #getter for @word
   def get_word
-    @word.downcase
+    @word = @word.downcase
   end
 
   def score
     #enumerate thru word and check if its chars match keys from letter_values
     #add up the values of the matching keys to get score
       #convert word to an array to loop thr
-    word_arr = @word.split('')
+    word_arr = get_word.split('')
       #for each letter in word_arr,
       for letter in word_arr
       #loop thru letter_values and find a key that matches
         @letter_values.each do |key, value|
         #add matching keys' value to a score instance variable
-          if "#{key}" === letter
+          if "#{key}" == letter
             @score += value
           end
         end
@@ -40,10 +38,13 @@ class ScrabbleWord
     return @score
   end
 
-  def multiplier_score
+  def multiplier_score(multiplier)
+    self.score #get score off the bat
+    if multiplier == 2
+      @score *= 2
+    elsif multiplier == 3
+      @score *= 3
+    end
   end
 
 end
-
-blue = ScrabbleWord.new('blue')
-binding.pry
