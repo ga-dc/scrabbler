@@ -22,11 +22,13 @@ describe ScrabbleWord do
   describe "#multiplier_score" do
     it "multiplies score by a factor of 2" do
       word = ScrabbleWord.new("snowflake")
+      word.score
       expect( word.multiplier_score(2) ).to eq 38
     end
 
     it "multiplies score by a factor of 3" do
       word = ScrabbleWord.new("mittens")
+      word.score
       expect( word.multiplier_score(3) ).to eq 27
     end
   end

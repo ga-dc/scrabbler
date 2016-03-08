@@ -1,4 +1,4 @@
-require "pry"
+# require "pry"
 
 # Define a class named ScrabbleWord
 class ScrabbleWord
@@ -42,4 +42,4 @@ class ScrabbleWord
 
 end
 
-binding.pry
+# binding.pry
