@@ -3,7 +3,7 @@ require "pry"
 # Define a class named ScrabbleWord
 class ScrabbleWord
   # Write a "getter" for this instance variable @word that returns the word as a lowercase string.
-  attr_accessor :word, :letters
+  attr_accessor :word, :letters, :sum_score
 
   # make converter a class variable
   @@converters = {
@@ -24,18 +24,20 @@ class ScrabbleWord
 
   # Define a method .score that returns the scrabble score of the word.
   def score
-    # for each letter, convert letter to symbol
+    word_score = 0
     @letters.each do |letter|
-      @syms = letter.to_sym
+      # for each letter, convert letter to symbol
+      # word score = 0, word score = + word score plus value of letter
+      word_score = word_score + @@converters[letter.to_sym]
     end
-    @syms
-    # word score = 0, word score = + word score plus value of letter
     #return sum of letters
+    @sum_score = word_score
+    return word_score
   end
 
   # Define a method .multiplier_score that takes a multiplier as an argument and returns a multiplied value of the score. (Think double or triple word score.)
   def multiplier_score multiplier
-    self.score * multiplier
+    self.sum_score * multiplier
   end
 
 end
