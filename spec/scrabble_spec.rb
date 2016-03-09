@@ -1,33 +1,30 @@
-require 'spec_helper'
-require_relative '../lib/scrabble_word'
+require "pry"
 
-describe ScrabbleWord do
-  describe "#score" do
-    it "scores words with a single letter" do
-      word = ScrabbleWord.new("a")
-      expect( word.score ).to eq 1
-    end
 
-    it "scores words with multiple letters" do
-      word = ScrabbleWord.new("winter")
-      expect( word.score ).to eq 9
-    end
+class ScrabbleWord
+  attr_accessor :word
 
-    it "is not affected by capitalization" do
-      word = ScrabbleWord.new("SnoWMaN")
-      expect( word.score ).to eq 12
+  def initialize(word)
+    @word = word
+    @lowercase = @word.downcase.split("")
+  end
+
+  def score
+    wordValue = 0
+    letterValue =  {  a: 1, b: 3, c: 3, d: 2, e: 1,
+      f: 4, g: 2, h: 4, i: 1, j: 8,
+      k: 5, l: 1, m: 3, n: 1, o: 1,
+      p: 3, q: 10, r: 1, s: 1, t: 1,
+      u: 1, v: 4, w: 4, x: 8, y: 4,
+      z: 10}
+      @lowercase.each do |letter|
+        wordValue = letterValue[letter.to_sym]
+      end
+      binding.pry
+      return wordValue
     end
   end
 
-  describe "#multiplier_score" do
-    it "multiplies score by a factor of 2" do
-      word = ScrabbleWord.new("snowflake")
-      expect( word.multiplier_score(2) ).to eq 38
-    end
 
-    it "multiplies score by a factor of 3" do
-      word = ScrabbleWord.new("mittens")
-      expect( word.multiplier_score(3) ).to eq 27
-    end
-  end
-end
+  casey = ScrabbleWord.new("casey")
+  casey.score
