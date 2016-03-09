@@ -18,15 +18,15 @@ class ScrabbleWord
         # only calculate the score on initialization and add an attr_reader
         # for getter access
         @score = self.word.split("").map do |c|
-            ScrabbleScores::MAP[c.to_sym]
-        end.reduce(:+)
+                     ScrabbleScores::MAP[c.to_sym]
+                 end.reduce(:+)
     end
 
     def word
         @word.downcase
     end
 
-    def multiplier_score  multiplier
+    def multiplier_score multiplier
         score * multiplier
     end
 end
