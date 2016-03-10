@@ -16,8 +16,16 @@ class ScrabbleWord
           p: 3, q: 10, r: 1, s: 1, t: 1,
           u: 1, v: 4, w: 4, x: 8, y: 4,
           z: 10}
+
+      symbols = letters.map do |symbols|
+         symbols.to_sym
+       end
+       
       score += values[letter]
+
+
     end
+
 end
 
 binding.pry
