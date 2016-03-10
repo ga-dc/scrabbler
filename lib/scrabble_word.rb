@@ -1,19 +1,49 @@
-# require "pry"
+  # require "pry"
 
-class ScrabbleWord
-  attr_accessor :scoring
+  class ScrabbleWord
+    attr_accessor :scoring
 
-  def initialize (word)
+    def initialize (word)
 
-    # return the word but lowercase
-    @word = word.downcase
+      # return the word but lowercase
+      @word = word.downcase
 
-    # acccessing score throughout the document
-    @scoring = []
+      # acccessing score throughout the document
+      @scoring = []
+    end
+
+    #return the scrabble score of whatever word
+    def score
+
+      # we can make an array
+      alphabet = {:a=> 1, :b=> 3, :c =>3, :d =>2, :e=> 1,
+        :f=> 4, :g =>2, :h=> 4, :i =>1, :j =>8,
+        :k =>5, :l =>1, :m=> 3, :n =>1, :o =>1,
+        :p=> 3, :q =>10, :r=> 1, :s=> 1, :t=> 1,
+        :u=> 1, :v =>4, :w =>4, :x=> 8, :y =>4,
+        :z=> 10}
+        @word.each_char do |char|
+          alphabet.each do |alph_letter, num_val|
+
+            #need to know when the letters equal each other
+            #alphabet.each_key to get the symbol and to_s to convert that symbol to a string to be compared to the char
+
+            if char == alph_letter.to_s
+              puts "#{char} equals #{num_val}"
+              @scoring << num_val
+            end
+          end
+        end
+
+        # displaying/returning the new @scoring
+        puts  "The score is #{self.scoring = @scoring.inject(0, :+)}"
+        return @scoring
+    end
+
   end
-end
+    narwhol = ScrabbleWord.new("Narwhol")
+    narwhol.score
 
-narwhol = ScrabbleWord.new("Narwhol")
 
-# binding.pry
-# puts "yo mama"
+    # binding.pry
+    # puts "yo mama"
