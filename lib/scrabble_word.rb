@@ -20,12 +20,14 @@ class ScrabbleWord
       symbols = letters.map do |symbols|
          symbols.to_sym
        end
-       
-      score += values[letter]
-
-
+       symbols.each do |letter|
+        score += values[letter]
+      end
+        score
     end
-
+def score_multiplier    (multiplier)
+    return multiplier *scroe
+  end
 end
 
 binding.pry
