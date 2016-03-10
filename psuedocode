@@ -1,0 +1,26 @@
+create class for ScrabbleWord
+using getters so have attr_accessor
+initialize ScrabbleWord
+include word in argument
+
+define word and set it as a method
+
+set a getter = get_word
+lowercase = downcase
+
+
+to get score:
+give score a value of zero
+list of letters and their values
+use downcase to get lower case of letters
+split the word to get value of each letter
+interpolation (In cases like the above, you either need to convert the variable to a string using .to_s OR use something called "interpolation.)
+score will equal the letter * it's value
+
+
+if a multiplier, map double and triple paths
+mulitply by the score value
+get total score
+
+
+test a new variable
