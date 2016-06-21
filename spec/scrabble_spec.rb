@@ -1,7 +1,7 @@
 require 'spec_helper'
 require_relative '../lib/scrabble_word'
 
-describe ScrabbleWord do
+describe "ScrabbleWord" do
   describe "#score" do
     it "scores words with a single letter" do
       word = ScrabbleWord.new("a")
