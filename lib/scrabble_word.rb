@@ -1,6 +1,6 @@
 class ScrabbleWord
   def initialize(word)
-    @word = word.downcase
+    @word = word.downcase 
 
   end
   def score
