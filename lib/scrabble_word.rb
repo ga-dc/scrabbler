@@ -1,12 +1,10 @@
-require "pry"
-
 class ScrabbleWord
 
   def initialize(word)
     @word = word
   end
   def word
-    return @word.downcase
+    return @word
   end
   def score
     letters = {
@@ -18,7 +16,7 @@ class ScrabbleWord
       z: 10
     }
     total = 0
-    @word.split('').each do |letter|
+    @word.downcase.split('').each do |letter|
       total += letters[letter.to_sym]
     end
     return total
@@ -27,9 +25,3 @@ class ScrabbleWord
     multiplier * score
   end
 end
-
-pink = ScrabbleWord.new("pink")
-
-binding.pry
-
-puts "End of file"
