@@ -1,10 +1,10 @@
+require "pry"
 class ScrabbleWord
   def initialize(word)
-    @word = word.downcase #why does this work and the below getter function not work?
+    @word = word
   end
   def word
-    # @word = @word.downcase why won't this work?
-    @word
+    return @word.downcase
   end
   def score
     letter_scores = {
@@ -23,3 +23,8 @@ class ScrabbleWord
     score*multiplier
   end
 end
+
+word = ScrabbleWord.new("whoop")
+
+binding.pry
+puts "end"
