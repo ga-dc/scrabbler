@@ -1,6 +1,6 @@
 # Scrabble
 
-## Setup 
+## Setup
 
 1. Fork and clone (remember to clone YOUR fork).
 2. Run `bundle install`.
@@ -8,7 +8,7 @@
 
 This will run several tests on the code in the `lib/scrabble_word.rb` file. The first time you run `rspec` all the tests will fail because there basically isn't any code in `lib/scrabble_word.rb`.
 
-Your goal is to add code to `lib/scrabble_word.rb` such that all the tests pass. Until you get to the bonus, **there is no need to modify any files except `lib/scrabble_word.rb`**. 
+Your goal is to add code to `lib/scrabble_word.rb` such that all the tests pass. Until you get to the bonus, **there is no need to modify any files except `lib/scrabble_word.rb`**.
 
 If you've never played the game Scrabble before, you may want to ask your neighbor about the rules of the game and how words are scored.
 
@@ -36,4 +36,3 @@ z: 10
 ## Deliverable
 
 Submit a pull request with your current progress. Include your Completeness (1-5) and Comfort (1-5). We recommend you include your pseudocode, comments, and descriptions of areas where you had difficulty.
-
