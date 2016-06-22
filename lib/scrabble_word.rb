@@ -2,16 +2,9 @@
 # require "pry"
 
 #
-# @@tile_values =  {:a=>1,:b =>3,:c =>3,:d =>2,:e =>1,:f =>4,:g =>2,:h =>4}
-# tiles_b = {:i =>1,:j=>8,:k=>5,:l=>1,:m=>3,:n=>1,:o=>1,:p=>3,:q=>10}
-# tiles_c = {:i =>1,:j=>8,:k=>5,:l=>1,:m=>3,:n=>1,:o=>1,:p=>3,:q=>10:x=>8,:y=>4,:z=>10}
-# @@tile_values.merge!(tiles_b)
-# @@tile_values.merge!(tiles_c)
-# # puts @@tile_values
-# @word.score = 0
-
 
 class ScrabbleWord
+attr_accessor :word
   def initialize(word)
     @word = word
   end
