@@ -9,6 +9,9 @@ class ScrabbleWord
   end
   def score
       @word.downcase.each_byte{|w|  w.chr}
+      # for each byte assign that a value
+      # then add values together
+      # show that value
   end
   def multiplier_score (multiplyBy)
       score * multiplyBy
