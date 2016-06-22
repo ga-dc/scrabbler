@@ -1,5 +1,5 @@
-require 'spec_helper'
-require_relative '../lib/scrabble_word'
+require 'spec_helper.rb'
+require_relative '../lib/scrabble_word.rb'
 
 describe ScrabbleWord do
   describe "#score" do
