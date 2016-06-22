@@ -1,11 +1,12 @@
-require "pry"
 class ScrabbleWord
   def initialize(word)
-    @word = word
+    @word = word.downcase
+    # needed to make this downcase instead of the getter, otherwise can't pass tests, why?
   end
   def word
-    return @word.downcase
+    @word
   end
+  # I can comment this getter method out and still pass the tests, downcase doesn't work on it as well
   def score
     letter_scores = {
       a: 1, b: 3, c: 3, d: 2, e: 1,
@@ -23,8 +24,3 @@ class ScrabbleWord
     score*multiplier
   end
 end
-
-word = ScrabbleWord.new("whoop")
-
-binding.pry
-puts "end"
