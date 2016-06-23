@@ -1,0 +1,48 @@
+# require "pry"
+
+class ScrabbleWord
+
+
+  def initialize (word)
+    @word = word
+    @total = 0
+  end
+
+  def word
+    return @word
+  end
+
+  def total
+    return @total
+  end
+
+
+  def score
+    scores = {
+      a: 1, b: 3, c: 3, d: 2, e: 1,
+      f: 4, g: 2, h: 4, i: 1, j: 8,
+      k: 5, l: 1, m: 3, n: 1, o: 1,
+      p: 3, q: 10, r: 1, s: 1, t: 1,
+      u: 1, v: 4, w: 4, x: 8, y: 4,
+      z: 10
+    }
+    @word.downcase.split('').each do |chr|
+      @total +=  scores[chr.to_sym]
+    end
+    @total
+  end
+
+  def multiplier_score(multiplier)
+    self.score
+    return (@total * multiplier)
+  end
+end
+   hello = ScrabbleWord.new ("hello")
+
+  # @points = 0
+  # SW.get_score(word)
+  # SW.multipler.score(points,multiplier)
+  # puts word
+  #
+  # binding.pry #runs program
+  # puts “hello”
