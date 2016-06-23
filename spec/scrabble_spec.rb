@@ -12,6 +12,7 @@ describe ScrabbleWord do
       word = ScrabbleWord.new("winter")
       expect( word.score ).to eq 9
     end
+    
 
     it "is not affected by capitalization" do
       word = ScrabbleWord.new("SnoWMaN")
